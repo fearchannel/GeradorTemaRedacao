@@ -1,9 +1,6 @@
-package fearchannel.projects.doncamatic.connect;
+package fearchannel.projects.doncamatic.main;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class ConexaoSQLite {
     private Connection conexao;
@@ -18,8 +15,6 @@ public class ConexaoSQLite {
             e.printStackTrace();
             return false;
         }
-
-        System.out.println("Conectou!");
         return true;
     }
 
@@ -32,13 +27,21 @@ public class ConexaoSQLite {
             e.printStackTrace();
             return false;
         }
-        System.out.println("Desconectou!");
         return true;
     }
 
     public Statement criarStatement(){
         try{
             return this.conexao.createStatement();
+        } catch (SQLException e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public PreparedStatement criarPreparedStatement(String sql){
+        try{
+            return this.conexao.prepareStatement(sql);
         } catch (SQLException e){
             e.printStackTrace();
             return null;
