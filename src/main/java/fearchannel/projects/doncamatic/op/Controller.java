@@ -11,7 +11,7 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
 
-    private Consulta_Banco consulta_banco = new Consulta_Banco();
+    private ConsultaBanco consulta_banco = new ConsultaBanco();
 
     @FXML
     protected Button btnGerar;

@@ -10,12 +10,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Random;
 
-class Consulta_Banco {
+class ConsultaBanco {
     private Random geradorAleatorio;
     private ConexaoSQLite conexao;
     private PreparedStatement preparedStatement;
 
-    Consulta_Banco() {
+    ConsultaBanco() {
         geradorAleatorio = new Random();
         conexao = new ConexaoSQLite();
         CriarBancoSQLite criarBancoSQLite = new CriarBancoSQLite(conexao);

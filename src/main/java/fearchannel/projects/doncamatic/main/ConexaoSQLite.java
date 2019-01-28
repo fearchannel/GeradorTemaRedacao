@@ -18,16 +18,14 @@ public class ConexaoSQLite {
         return true;
     }
 
-    public boolean desconectar() {
+    public void desconectar() {
         try {
             if (!conexao.isClosed()) {
                 this.conexao.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
-        return true;
     }
 
     public Statement criarStatement(){
@@ -48,7 +46,4 @@ public class ConexaoSQLite {
         }
     }
 
-    public Connection getConexao(){
-        return this.conexao;
-    }
 }
